@@ -4,4 +4,7 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Shopper.create(name: 'One')
+['1', '2', '3', '4', '5'].each do |number|
+   Item.create(name: number, price: (2.99 + number.to_i))
+ end

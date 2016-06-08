@@ -11,10 +11,10 @@
   </head>
 
   <body>
-    <nav>A NavBar <%= yield :navbar %></nav><hr>
-      <%= image_tag "sshot.png", size: "1200x30"%>
+    <nav>A special LAYOUT for the cart</nav><hr>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: name %>
+    <% end %>
     <%= yield %>
-
-    <footer> Copyright - Marco Bagnasco 2016 </footer>
   </body>
 </html>
