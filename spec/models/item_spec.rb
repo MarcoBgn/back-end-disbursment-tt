@@ -1,6 +1,5 @@
 require 'rails_helper'
 
 RSpec.describe Item, type: :model do
-  it {is_expected.to have_attribute :name}
-  it {is_expected.to have_attribute :price}
+  pending "add some examples to (or delete) #{__FILE__}"
 end
