@@ -6,11 +6,9 @@ class CartsController < ApplicationController
   end
 
   private
-
   def add_item_to_trolley
     @trolley = Trolley.find_by(shopper_id: session[:shopper_id])
     item = BluePrintItem.find(params[:id])
     @trolley.items.create(name: item.name, price: item.price)
   end
-
 end
