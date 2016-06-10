@@ -1,13 +1,14 @@
 <%= content_for :navbar do %>
   <%= link_to "HOME", root_path, {class: "home_link"} %>
+  <%= link_to "View Trolley", trolley_path(@trolley) %>
 <% end %>
-<p> Welcome Guest Shopper</p>
+<p> Welcome <%= @shopper.name %></p>
 
 <div class="item_list">
   <table class="items_table">
     <tr>
       <% @items.each do |item| %>
-        <td><%= link_to "Item #{item.id}", edit_cart_path(item.id), id: "item_#{item.id}"%></td>
+        <td><%= link_to "Item #{item.id}", edit_cart_path(item), id: "item_#{item.id}"%></td>
       <% end %>
     </tr>
   </table>

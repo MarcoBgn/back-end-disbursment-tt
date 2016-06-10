@@ -4,7 +4,8 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-Shopper.create(name: 'One')
-['1', '2', '3', '4', '5'].each do |number|
-   Item.create(name: number, price: (2.99 + number.to_i))
+Shopper.create(name: 'Guest Shopper')
+Shop.create
+["1", "2", "3", "4", "5"].each do |number|
+   Shop.first.blue_print_items.create(id: number.to_i, name: number, price: (2.99 + number.to_i))
  end

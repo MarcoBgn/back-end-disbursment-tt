@@ -2,7 +2,7 @@ class ShoppersController < ApplicationController
   def index
     initialize_shopper
     initialize_trolley
-    @items = Item.all
+    @items = Shop.first.blue_print_items
   end
 
   def edit

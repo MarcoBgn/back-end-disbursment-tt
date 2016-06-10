@@ -11,10 +11,11 @@
   </head>
 
   <body>
-    <nav>A special LAYOUT for the cart</nav><hr>
+    <nav>Here is your cart: <%= Shopper.find(session[:shopper_id]).name %></nav><hr>
     <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, class: name %>
     <% end %>
     <%= yield %>
+    <%= link_to "Back", shoppers_path %>
   </body>
 </html>

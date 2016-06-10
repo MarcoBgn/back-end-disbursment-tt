@@ -1,0 +1,8 @@
+<ul>
+  <% @trolley.items.each do |item| %>
+  <li>
+    You ordered: <%= item.name %> - Price £<%= item.price %>
+  </li>
+  <% end %>
+  <h3>Total in trolley: £<%= @trolley.total_price %></h3>
+</ul>

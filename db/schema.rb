@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160609212620) do
+ActiveRecord::Schema.define(version: 20160610150153) do
+
+  create_table "blue_print_items", force: :cascade do |t|
+    t.string   "name"
+    t.decimal  "price"
+    t.string   "code"
+    t.integer  "shop_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "blue_print_items", ["shop_id"], name: "index_blue_print_items_on_shop_id"
 
   create_table "carts", force: :cascade do |t|
     t.decimal  "principal_amount", precision: 16, scale: 2, null: false
@@ -22,9 +33,9 @@ ActiveRecord::Schema.define(version: 20160609212620) do
   create_table "items", force: :cascade do |t|
     t.string   "name"
     t.decimal  "price"
+    t.integer  "trolley_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "trolley_id"
   end
 
   add_index "items", ["trolley_id"], name: "index_items_on_trolley_id"
@@ -54,6 +65,11 @@ ActiveRecord::Schema.define(version: 20160609212620) do
 
   create_table "shoppers", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "shops", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
