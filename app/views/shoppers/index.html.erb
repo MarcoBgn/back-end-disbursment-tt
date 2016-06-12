@@ -7,7 +7,7 @@
 <div class="item_list">
   <table class="items_table">
     <tr>
-      <% @items.each do |item| %>
+      <% @shop_items.each do |item| %>
         <td><%= link_to "Item #{item.id}", edit_cart_path(item), id: "item_#{item.id}"%></td>
       <% end %>
     </tr>

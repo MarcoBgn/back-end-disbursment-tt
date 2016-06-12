@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   resources :merchants
   resources :shoppers
   resources :carts
-  resources :trolleys
+  resources :trolleys do
+    resources :items
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # Serve websocket cable requests in-process

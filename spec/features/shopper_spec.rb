@@ -25,10 +25,13 @@ describe 'Feature: Shopper' do
   end
 
   it "Can view the state of the trolley", js: true do
-    visit '/'
-    click_link 'item_3'
-    click_link 'Back'
-    click_link "View Trolley"
+    add_item_and_view_trolley('item_3')
     expect(page).to have_content 'Total in trolley: £2.99'
+  end
+
+  it "Can remove an item from the trolley" do
+    add_item_and_view_trolley('item_4')
+    click_link "delete_1"
+    expect(page).to have_content "Item 1 removed from the trolley"
   end
 end

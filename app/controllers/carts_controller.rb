@@ -1,7 +1,7 @@
 class CartsController < ApplicationController
   def edit
     add_item_to_trolley
-    flash[:notice] =  "Item #{params[:id]} added to the trolley."
+    flash.now[:notice] =  "Item #{params[:id]} added to the trolley. #{view_context.link_to("View Trolley", trolley_path)}"
     render layout: "cart"
   end
 

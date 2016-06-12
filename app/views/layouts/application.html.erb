@@ -12,7 +12,10 @@
 
   <body>
     <nav>A NavBar <%= yield :navbar %></nav><hr>
-      <%= image_tag "sshot.png", size: "1200x30"%>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, sanitize(msg), class: name %>
+    <% end %>
+      <%= image_tag "sshot.png", size: "1280x30"%>
     <%= yield %>
 
     <footer> Copyright - Marco Bagnasco 2016 </footer>

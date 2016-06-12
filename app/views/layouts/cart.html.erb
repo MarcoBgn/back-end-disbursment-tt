@@ -13,7 +13,7 @@
   <body>
     <nav>Here is your cart: <%= Shopper.find(session[:shopper_id]).name %></nav><hr>
     <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, class: name %>
+      <%= content_tag :div, sanitize(msg), class: name %>
     <% end %>
     <%= yield %>
     <%= link_to "Back", shoppers_path %>
