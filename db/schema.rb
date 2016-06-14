@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160610150153) do
+ActiveRecord::Schema.define(version: 20160614160235) do
 
   create_table "blue_print_items", force: :cascade do |t|
     t.string   "name"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20160610150153) do
     t.decimal  "principal_amount", precision: 16, scale: 2, null: false
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
+    t.integer  "trolley_id"
   end
 
   create_table "items", force: :cascade do |t|

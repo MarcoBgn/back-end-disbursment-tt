@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :merchants
   resources :shoppers
   resources :carts
+  resources :orders
   resources :trolleys do
     resources :items
   end

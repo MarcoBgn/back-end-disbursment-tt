@@ -1,7 +1,7 @@
 class CartsController < ApplicationController
   def new
     trolley = Trolley.find(params[:trolley_id])
-    @cart = trolley.create_cart(principal_amount: trolley.total_price + standard_shipping, trolley_id: params[:trolley_id])
+    @cart = Cart.create(principal_amount: trolley.total_price + standard_shipping, trolley_id: trolley.id)
   end
 
   private
