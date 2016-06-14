@@ -34,4 +34,10 @@ describe 'Feature: Shopper' do
     click_link "delete_1"
     expect(page).to have_content "Item 1 removed from the trolley"
   end
+
+  it "Can proceed to checkout" do
+    add_item_and_view_trolley('item_5')
+    click_link 'Checkout'
+    expect(page).to have_content "Proceed to Checkout"
+  end
 end

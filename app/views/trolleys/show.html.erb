@@ -6,4 +6,7 @@
   </li>
   <% end %>
   <h3>Total in trolley: £<%= @trolley.total_price %></h3>
+  <% if @trolley.items.count != 0 %>
+    <%= link_to 'Checkout', new_cart_path(trolley_id: @trolley.id)  %>
+  <% end %>
 </ul>

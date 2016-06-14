@@ -8,7 +8,7 @@
   <table class="items_table">
     <tr>
       <% @shop_items.each do |item| %>
-        <td><%= link_to "Item #{item.id}", edit_cart_path(item), id: "item_#{item.id}"%></td>
+        <td><%= link_to "Item #{item.id}", edit_trolley_item_path(@trolley, item), id: "item_#{item.id}"%></td>
       <% end %>
     </tr>
   </table>

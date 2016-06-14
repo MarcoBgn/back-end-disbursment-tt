@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_filter :set_cache_headers
+  before_action :set_cache_headers
 
   def set_cache_headers
     response.headers["Chache-Control"] = 'no-chache, no-store, max-age=0, must-revalidate'

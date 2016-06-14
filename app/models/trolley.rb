@@ -3,6 +3,6 @@ class Trolley < ApplicationRecord
   has_many :items
 
   def total_price
-    self.items.map {|item| item.price}.reduce(:+) || 0 
+    self.items.map {|item| item.price}.reduce(:+) || 0
   end
 end
