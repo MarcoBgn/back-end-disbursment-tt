@@ -11,5 +11,6 @@
   <% end %>
   <h4> Standard UK shipping: £3.99 </h4>
   <h3>Total: £<%= @cart.principal_amount %></h3>
-    <%= link_to 'Proceed to payment', new_order_path(cart: @cart) %>
+    <%= link_to 'Proceed to payment', new_order_path({order: {cart_id: @cart, merchant_id: 1, confirmed_at: Date.new,
+                                                              shipped_cart_id: @cart.id, unshipped_cart_id: @cart.id}}) %>
 </ul>

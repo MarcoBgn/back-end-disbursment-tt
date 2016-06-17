@@ -40,4 +40,11 @@ describe 'Feature: Shopper' do
     click_link 'Checkout'
     expect(page).to have_content "Proceed to Checkout"
   end
+
+  it "Can create a new order" do
+    add_item_and_view_trolley('item_6')
+    click_link 'Checkout'
+    click_link 'Proceed to payment'
+    expect(page).to have_content "Thank you. Your order has been sent"
+  end
 end
