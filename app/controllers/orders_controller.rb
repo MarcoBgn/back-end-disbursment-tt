@@ -1,5 +1,9 @@
 class OrdersController < ApplicationController
 
+  def index
+    @orders = Order.all
+  end
+
   def create
     @order = Order.new(order_params.merge(order_number: order_number))
     respond_to do |format|

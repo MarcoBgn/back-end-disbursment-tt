@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
   root 'shoppers#index'
-  resources :merchants
-  resources :shoppers
-  resources :carts
-  resources :orders
+  resources :merchants, :shoppers, :carts, :orders
   resources :trolleys do
     resources :items
   end
